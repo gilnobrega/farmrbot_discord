@@ -10,7 +10,7 @@ exports.conf = {
 	permLevel: 0,
 	deleteCommand: false,
 	cooldown: 10,
-	filtered_channels: []
+	filtered_channels: ['829057822213931062']
 };
 
 exports.cooldown = {};
