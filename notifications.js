@@ -28,7 +28,7 @@ async function sendmsg(id, command, name) {
         if (command == "block") message = ":money_mouth: " + name + " just found a block!";
         else if (command == "plot") message = ":tada: " + name + " just completed another plot.";
         else if (command == "offline") message = ":skull_crossbones: Lost connection to " + name + "!";
-        else if (command == "stopped") message = ":scream: " + name + " stopped farming!";
+        else if (command == "stopped") message = ":scream: " + name + " stopped farming/harvesting!";
         else if (command == "drive") message = "<:hdd:831678109018751037> " + name + " lost one of its drives!";
 
         const user = await client.users.fetch(id).catch(() => null);
