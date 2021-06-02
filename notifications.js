@@ -29,7 +29,7 @@ async function sendmsg(id, command, name) {
         else if (command == "plot") message = ":tada: " + name + " just completed another plot.";
         else if (command == "offline") message = ":skull_crossbones: Lost connection to " + name + "!";
         else if (command == "stopped") message = ":scream: " + name + " stopped farming!";
-        else if (command == "drive") message = ":scream: " + name + " lost one of its drives!";
+        else if (command == "drive") message = "<:hdd:831678109018751037> " + name + " lost one of its drives!";
 
         const user = await client.users.fetch(id).catch(() => null);
 
