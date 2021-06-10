@@ -21,6 +21,6 @@ exports.cooldown = {};
 exports.help = {
     name: "link",
     category: "Chia Commands",
-    description: "Links a new ChiaBot user",
+    description: "Links a new id",
     usage: "link <ID>"
 };

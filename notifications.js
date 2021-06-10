@@ -36,7 +36,7 @@ async function sendmsg(id, command, name) {
         if (!user) console.log("User not found:(");
 
         await user.send(message).catch(() => {
-            console.log("User has DMs closed or has no mutual servers with the bot:(");
+            console.log("User has DMs closed or has no mutual servers with the bot :(");
         });
 
     }

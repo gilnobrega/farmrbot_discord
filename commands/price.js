@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 exports.run = (client, message, args) => {
-client.execute(`../server/chiabot_server.exe price`, message, true);
+client.execute(`../server/farmr_server.exe price`, message, true);
 };
 
 exports.conf = {

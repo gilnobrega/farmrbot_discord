@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 exports.run = (client, message, args) => {
-    message.reply("https://chiabot.znc.sh/read.php?user=" + message.author.id);
+    message.reply("https://farmr.net/read.php?user=" + message.author.id);
 };
 
 exports.conf = {
