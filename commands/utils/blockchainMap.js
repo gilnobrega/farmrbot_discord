@@ -1,5 +1,6 @@
 module.exports = blockchainMap = {
     "farmr": "xch",
     "chia": "xch",
-    "flax": "xfx"
+    "flax": "xfx",
+    "chaingreen": "cgn"
 }
