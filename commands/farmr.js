@@ -1,9 +1,10 @@
-const blockchainMap = require("./commands/utils/blockchainMap.js");
+const blockchainMap = require("./utils/blockchainMap.js");
+
 const Discord = require("discord.js");
 exports.run = (client, message, args) => {
-	console.log(blockchainMap);
 	const endOfFirstCommand = message.content.indexOf(" ")-1;
 	const coinName = message.content.substr(1,endOfFirstCommand > 0 ? endOfFirstCommand : undefined);
+	console.log(coinName);
 	client.execute(`../server/farmr_server.exe ${message.author.id} --blockchain ${blockchainMap[coinName]}`, message, true);
 };
 
@@ -20,8 +21,8 @@ exports.conf = {
 exports.cooldown = {};
 
 exports.help = {
-	name: "chia",
+	name: "farmr",
 	category: "Chia Commands",
 	description: "Displays your basic farming stats",
-	usage: "chia"
+	usage: "farmr, chia, flax"
 };
