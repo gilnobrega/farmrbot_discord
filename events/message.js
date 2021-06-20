@@ -18,28 +18,18 @@ module.exports = async (client, message) => {
         //Grab our arguments & command name
         const args = message.content.slice(config.PREFIX.length).trim().split(/ +/g);
         let command = args.shift().toLowerCase();
-
-        const blockchainMap = require("../commands/utils/blockchainMap.js");
-        var coinNames = Object.keys(blockchainMap).map((item) => `${item}`);
-
-        for (i = 0; i < coinNames.length; i++)
-        {
-            var coinName = coinNames[i];
-            //Hacky fix for recognizing old command structure
-            if (command == coinName && args[0]) {
-                command = `${coinName} ${args[0]}`;
-
-                //Shift
-                args.shift();
-            }
-        }
+        let dualCommand = `${command} ${args[0] || ''}`.toLowerCase();
 
         //If the member on a guild is invisible or not cached, fetch them.
         if (message.guild && !message.member)
             await message.guild.fetchMember(message.author);
 
+        // Is dual command?
+        const dualCmd = client.commands.get(client.aliases.get(dualCommand))
+        if(dualCmd) args.shift();
+
         //Is this a valid command, or command alias?
-        const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
+        const cmd = dualCmd || client.commands.get(command) || client.commands.get(client.aliases.get(command));
         if (!cmd)
             return;
 
