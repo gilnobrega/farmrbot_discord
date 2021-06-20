@@ -1,12 +1,17 @@
+const blockchainMap = require("./utils/blockchainMap.js");
 const Discord = require("discord.js");
+
 exports.run = (client, message, args) => {
-client.execute(`../server/farmr_server.exe ${message.author.id}  full`, message, true);
+	const endOfFirstCommand = message.content.indexOf(" ")-1;
+	const coinName = message.content.substr(1,endOfFirstCommand > 0 ? endOfFirstCommand : undefined);
+	console.log(coinName);
+    client.execute(`../server/farmr_server.exe ${message.author.id} full --blockchain ${blockchainMap[coinName]}`, message, true);
 };
 
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
-	aliases: ['chia full'],
+	aliases: Object.keys(blockchainMap).map((item) => `${item} full`),
 	permLevel: 0,
 	deleteCommand: false,
 	cooldown: 10,
@@ -19,5 +24,5 @@ exports.help = {
 	name: "full",
 	category: "Chia Commands",
 	description: "Displays your full farming stats",
-	usage: "full"
+	usage: "full, chia full, flax full"
 };

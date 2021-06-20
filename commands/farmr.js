@@ -1,6 +1,6 @@
 const blockchainMap = require("./utils/blockchainMap.js");
-
 const Discord = require("discord.js");
+
 exports.run = (client, message, args) => {
 	const endOfFirstCommand = message.content.indexOf(" ")-1;
 	const coinName = message.content.substr(1,endOfFirstCommand > 0 ? endOfFirstCommand : undefined);

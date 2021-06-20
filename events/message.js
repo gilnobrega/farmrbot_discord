@@ -19,12 +19,19 @@ module.exports = async (client, message) => {
         const args = message.content.slice(config.PREFIX.length).trim().split(/ +/g);
         let command = args.shift().toLowerCase();
 
-        //Hacky fix for recognizing old command structure
-        if (command == "chia" && args[0]) {
-            command = `chia ${args[0]}`;
+        const blockchainMap = require("../commands/utils/blockchainMap.js");
+        var coinNames = Object.keys(blockchainMap).map((item) => `${item}`);
 
-            //Shift
-            args.shift();
+        for (i = 0; i < coinNames.length; i++)
+        {
+            var coinName = coinNames[i];
+            //Hacky fix for recognizing old command structure
+            if (command == coinName && args[0]) {
+                command = `${coinName} ${args[0]}`;
+
+                //Shift
+                args.shift();
+            }
         }
 
         //If the member on a guild is invisible or not cached, fetch them.
