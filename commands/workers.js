@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
 	const endOfFirstCommand = message.content.indexOf(" ")-1;
-	const coinName = message.content.substr(1,endOfFirstCommand > 0 ? endOfFirstCommand : undefined);
+	const coinName = message.content.substr(1,endOfFirstCommand > 0 ? endOfFirstCommand : undefined).toLowerCase();
 	const currencySymbol = blockchainMap[coinName] || 'xch'
     client.execute(`../server/farmr_server.exe ${message.author.id} workers --blockchain ${currencySymbol}`, message, true);
 };
