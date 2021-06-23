@@ -27,6 +27,8 @@ async function sendmsg(id, command, name) {
         message = "";
 
         if (command == "block") message = ":money_mouth: " + name + " just found a block!";
+        else if (command == "coldBlock") message = ":cold_face: Cold Wallet in " + name + " just received xch. Is it a block?";
+
         else if (command == "plot") message = ":tada: " + name + " just completed another plot.";
 
         else if (command == "offline") message = ":skull_crossbones: Lost connection to " + name + "!";
