@@ -34,7 +34,7 @@ module.exports = (client) => {
 
 	            if (text !== null && text !== '' && text.length > 0) {
 	                const embed = new MessageEmbed()
-	                    .setColor(0x40ab5c)
+	                    .setColor(0xFFb335)
 	                    .setDescription(text)
 	                    .setFooter(lastUpdated);
 
