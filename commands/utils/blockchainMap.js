@@ -7,5 +7,7 @@ module.exports = blockchainMap = {
     "cgn": "cgn",
     "spare": "spare",
     "goji" : "xgj",
-    "xgj": "xgj"
+    "xgj": "xgj",
+    "seno" : "xse",
+    "xse" : "xse"
 }
