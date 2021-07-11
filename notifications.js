@@ -27,18 +27,18 @@ async function sendmsg(id, command, name) {
     if (id !== "none") {
         message = "";
 
-        if (command == "block") message = ":money_mouth: " + name + " just found a block!";
-        else if (command == "coldBlock") message = ":cold_face: Cold Wallet in " + name + " just received funds. Is it a block?";
+        if (command == "block") message = "🤑 " + name + " just found a block!";
+        else if (command == "coldBlock") message = "🥶 Cold Wallet in " + name + " just received funds. Is it a block?";
 
-        else if (command == "plot") message = ":tada: " + name + " just completed another plot.";
+        else if (command == "plot") message = "🎉 " + name + " just completed another plot.";
 
-        else if (command == "offline") message = ":skull_crossbones: Lost connection to " + name + "!";
-        else if (command == "online") message = ":smile: " + name + " has reconnected!";
+        else if (command == "offline") message = "☠️ Lost connection to " + name + "!";
+        else if (command == "online") message = "😊 " + name + " has reconnected!";
 
-        else if (command == "stopped") message = ":scream: " + name + " stopped farming/harvesting!";
-        else if (command == "started") message = ":sunglasses: " + name + " started farming/harvesting!";
+        else if (command == "stopped") message = "😱 " + name + " stopped farming/harvesting!";
+        else if (command == "started") message = "😎 " + name + " started farming/harvesting!";
 
-        else if (command == "drive") message = "<:hdd:831678109018751037> " + name + " lost one of its drives!";
+        else if (command == "drive") message = "💿 " + name + " lost one of its drives!";
 
         //sends email
         if (id.includes("@")) {
