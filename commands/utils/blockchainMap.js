@@ -9,5 +9,7 @@ module.exports = blockchainMap = {
     "goji" : "xgj",
     "xgj": "xgj",
     "seno" : "xse",
-    "xse" : "xse"
+    "xse" : "xse",
+    "flora" : "xfl",
+    "xfl" : "xfl"
 }
