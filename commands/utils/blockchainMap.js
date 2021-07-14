@@ -11,5 +11,11 @@ module.exports = blockchainMap = {
     "seno" : "xse",
     "xse" : "xse",
     "flora" : "xfl",
-    "xfl" : "xfl"
+    "xfl" : "xfl",
+    "hddcoin" : "hdd",
+    "hdd":"hdd",
+    "greendoge":"gdog",
+    "gdog":"gdog",
+    "avocado":"avo",
+    "avo":"avo"
 }
