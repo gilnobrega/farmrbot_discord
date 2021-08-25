@@ -28,7 +28,7 @@ async function sendmsg(id, command, name) {
         message = "";
 
         if (command == "block") message = "🤑 " + name + " just found a block!";
-        else if (command == "coldBlock") message = "🥶 Cold Wallet in " + name + " just received funds. Is it a block?";
+       // else if (command == "coldBlock") message = "🥶 Cold Wallet in " + name + " just received funds. Is it a block?";
 
         else if (command == "plot") message = "🎉 " + name + " just completed another plot.";
 
@@ -41,46 +41,47 @@ async function sendmsg(id, command, name) {
         else if (command == "drive") message = "💿 " + name + " lost one of its drives!";
 
         //sends email
-        if (id.includes("@")) {
+        if (message != "") {
 
-            // create reusable transporter object using the default SMTP transport
-            let transporter = nodemailer.createTransport({
-                host: "smtppro.zoho.eu",
-                port: 465,
-                secure: true, // true for 465, false for other ports
-                auth: {
-                    user: process.env.EMAIL_USER, // generated ethereal user
-                    pass: process.env.EMAIL_PASSWORD, // generated ethereal password
-                },
-            });
+            if (id.includes("@")) {
 
-            // send mail with defined transport object
-            let info = await transporter.sendMail({
-                from: '"farmr.net" <no-reply@farmr.net>', // sender address
-                to: id, // list of receivers
-                subject: message, // Subject line
-                text: message, // plain text body
-                html: "", // html body
-            });
+                // create reusable transporter object using the default SMTP transport
+                let transporter = nodemailer.createTransport({
+                    host: "smtppro.zoho.eu",
+                    port: 465,
+                    secure: true, // true for 465, false for other ports
+                    auth: {
+                        user: process.env.EMAIL_USER, // generated ethereal user
+                        pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+                    },
+                });
 
-            console.log("Email sent to " + id);
+                // send mail with defined transport object
+                let info = await transporter.sendMail({
+                    from: '"farmr.net" <no-reply@farmr.net>', // sender address
+                    to: id, // list of receivers
+                    subject: message, // Subject line
+                    text: message, // plain text body
+                    html: "", // html body
+                });
 
-        }
-        //sends discord notification
-        else {
-            const user = await client.users.fetch(id).catch(() => null);
+                console.log("Email sent to " + id);
 
-            if (!user) console.log("User not found:(");
+            }
+            //sends discord notification
+            else {
+                const user = await client.users.fetch(id).catch(() => null);
 
-            if (message != "") {
+                if (!user) console.log("User not found:(");
+
                 await user.send(message).catch(() => {
                     console.log("User has DMs closed or has no mutual servers with the bot :(");
                 });
 
                 console.log("Discord notification sent to " + id);
 
-            }
 
+            }
         }
 
     }
