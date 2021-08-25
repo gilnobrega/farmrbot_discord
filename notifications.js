@@ -28,7 +28,7 @@ async function sendmsg(id, command, name) {
         message = "";
 
         if (command == "block") message = "🤑 " + name + " just found a block!";
-       // else if (command == "coldBlock") message = "🥶 Cold Wallet in " + name + " just received funds. Is it a block?";
+        else if (command == "coldBlock") message = "🥶 Cold Wallet in " + name + " just received funds. Is it a block?";
 
         else if (command == "plot") message = "🎉 " + name + " just completed another plot.";
 
