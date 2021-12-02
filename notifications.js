@@ -91,7 +91,7 @@ const db_config = {
     host: 'localhost',
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
-    database: 'chiabot',
+    database: 'farmr',
     waitForConnections: true,
     connectionLimit: 1
 };
